@@ -41,6 +41,12 @@ function clock()
     //差秒を求める（1,000ミリ秒＝１分）ここだけ切り上げ
     var remain_s = Math.ceil(((dead - now) % 60000) / 1000);
 
+    
+    if (remain_s==60){
+        remain_s=0;
+        remain_mi=remain_mi+1;
+    }
+    
    // 日付時刻文字列のなかで常に2ケタにしておきたい部分はここで処理
     if (remain_d < 10) remain_d = "0" + remain_d;
     if (remain_mi < 10) remain_mi = "0" + remain_mi;
